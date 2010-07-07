@@ -1,18 +1,24 @@
 # == Schema Information
-# Schema version: 20100705035412
+# Schema version: 20100707131417
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  remember_token     :string(255)
+#  admin              :boolean
 #
 
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
+  
+  has_many :microposts, :dependent => :destroy
   
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
@@ -28,6 +34,11 @@ class User < ActiveRecord::Base
   validates_length_of   :password, :within => 6..40
   
   before_save :encrypt_password
+  
+  def feed
+    # This is preliminary. See Chapter 12 for the full implementation.
+    Micropost.all(:conditions => ["user_id = ?", id])
+  end
   
   # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)

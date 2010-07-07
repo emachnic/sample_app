@@ -1,4 +1,8 @@
 module SessionsHelper
+  def authenticate
+    deny_access unless signed_in?
+  end
+    
   def clear_return_to
     session[:return_to] = nil  
   end

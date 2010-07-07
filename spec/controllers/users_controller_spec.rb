@@ -58,6 +58,22 @@ describe UsersController do
         response.should have_tag("a[href=?]", "/users?page=2", "2")
         response.should have_tag("a[href=?]", "/users?page=2", "Next &raquo;")
       end
+      
+      describe "for admin users" do
+        
+        before(:each) do
+          @user.admin = true
+        end
+        
+        it "should have a delete link next to users"
+        
+        it "should not let a user destroy himself"
+      end
+      
+      describe "for non-admin users" do
+        
+        it "should not have a delete link next to users"
+      end
     end
   end
 
@@ -71,6 +87,18 @@ describe UsersController do
     it "should have the right title" do
       get :new
       response.should have_tag("title", /Sign up/)
+    end
+    
+    describe "for signed-in users" do
+      
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+      end
+      
+      it "should redirect to root url" do
+        get :new
+        response.should redirect_to(root_path)
+      end
     end
   end
   
@@ -128,6 +156,18 @@ describe UsersController do
   end
   
   describe "POST 'create'" do
+    
+    describe "for signed-in users" do
+      
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+      end
+      
+      it "should redirect to root url" do
+        post :create
+        response.should redirect_to(root_path)
+      end
+    end
 
     describe "failure" do
 

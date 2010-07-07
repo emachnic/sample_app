@@ -3,14 +3,18 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+    if current_user
+      redirect_to root_path
     else
-      @title = "Sign up"
-      render 'new'
+      @user = User.new(params[:user])
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome to the Sample App!"
+        redirect_to @user
+      else
+        @title = "Sign up"
+        render 'new'
+      end
     end
   end
   
@@ -31,8 +35,12 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new
-    @title = "Sign up"
+    if current_user
+      redirect_to root_path
+    else
+      @user = User.new
+      @title = "Sign up"
+    end
   end
   
   def show

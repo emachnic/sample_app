@@ -48,6 +48,6 @@ describe "LayoutLinks" do
     it "should have a profile link" do
       visit root_path
       response.should have_tag("a[href=?]", user_path(@user), "Profile")
-    end 
+    end
   end
 end

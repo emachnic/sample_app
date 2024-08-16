@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "3.3.1"
+
 gem "rails",           "7.2.0"
 gem "sprockets-rails", "3.4.2"
 gem "puma", "5.6.4"

@@ -294,5 +294,8 @@ DEPENDENCIES
   turbo-rails (= 1.1.1)
   web-console (= 4.2.0)
 
+RUBY VERSION
+   ruby 3.3.1p55
+
 BUNDLED WITH
    2.5.9

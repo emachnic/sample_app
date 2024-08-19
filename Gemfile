@@ -10,6 +10,8 @@ gem "turbo-rails", "1.1.1"
 gem "stimulus-rails", "1.0.4"
 gem "jbuilder", "2.11.5"
 gem "bootsnap", "1.12.0", require: false
+gem "sassc-rails", "2.1.2"
+gem "bootstrap-sass", "3.4.1"
 
 group :development, :test do
   gem "debug", "1.9.1", platforms: %i[ mri windows ], require: "debug/prelude"

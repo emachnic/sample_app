@@ -25,7 +25,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console", "4.2.0"
+  gem "web-console", "4.2.1"
   gem "syntax_tree", "6.2.0"
   gem "syntax_tree-haml", "4.0.3"
   gem "syntax_tree-rbs", "1.0.0"

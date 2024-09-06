@@ -6,7 +6,7 @@ $gray-medium-light: #eaeaea;
 body {
   padding-top: 60px;
 }
-  
+
 section {
   overflow: auto;
 }
@@ -21,12 +21,16 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
-  
 }
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1;
 }
 
@@ -69,7 +73,6 @@ p {
   }
 }
 
-
 /* footer */
 
 footer {
@@ -99,4 +102,51 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+
+/* sidebar */
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
 }

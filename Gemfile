@@ -29,6 +29,7 @@ group :development do
   gem "syntax_tree", "6.2.0"
   gem "syntax_tree-haml", "4.0.3"
   gem "syntax_tree-rbs", "1.0.0"
+  gem "erb_lint"
 end
 
 group :test do

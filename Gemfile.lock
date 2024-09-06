@@ -111,7 +111,7 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
-    debug (1.9.1)
+    debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.1)
@@ -265,7 +265,7 @@ GEM
     rdoc (6.7.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
-    reline (0.5.9)
+    reline (0.5.10)
       io-console (~> 0.5)
     rexml (3.3.5)
       strscan
@@ -377,7 +377,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.4.1)
   brakeman (= 6.1.2)
   capybara (= 3.37.1)
-  debug (= 1.9.1)
+  debug (= 1.9.2)
   erb_lint
   guard (= 2.18.0)
   guard-minitest (= 2.4.6)

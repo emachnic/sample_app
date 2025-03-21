@@ -17,7 +17,7 @@ gem "bcrypt", "3.1.20"
 group :development, :test do
   gem "debug", "1.9.1", platforms: %i[mri windows], require: "debug/prelude"
   gem "brakeman", "6.1.2", require: false
-  gem "rubocop-rails-omakase", "1.0.0", require: false
+  gem "rubocop-rails-omakase", "1.1.0", require: false
 end
 
 group :development, :test do

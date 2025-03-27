@@ -13,6 +13,9 @@ gem "bootsnap", "1.12.0", require: false
 gem "sassc-rails", "2.1.2"
 gem "bootstrap-sass", "3.4.1"
 gem "bcrypt", "3.1.20"
+gem "faker", "3.5.1"
+gem "will_paginate", "3.3.1"
+gem "bootstrap-will_paginate", "1.0.0"
 
 group :development, :test do
   gem "debug", "1.9.1", platforms: %i[mri windows], require: "debug/prelude"
